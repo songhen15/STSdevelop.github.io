@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semi-supervised Teeth Segmentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    <meta name="author" content="STS Challenge">
+    <meta name="description" content="Website for STS Challenge at MICCAI Conferences.">
+    <meta name="keywords" content="MICCAI, MICCAI 2023, MICCAI 2024, STS, Semi-supervised Learning, Segmentation, Teeth Segmentation, Panoramic X-ray, Dental CBCT, Challenge">
+    <!--  公开对基本依赖    -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="../jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <!--  默认的相关依赖  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../bootstrap/font/bootstrap-icons.css">
+    <!--  导入自定义依赖  -->
+    <link rel="stylesheet" href="../css/miccai2024.css">
+    <script type="text/javascript" src="../js/miccai2024.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" id="container-fluid-id">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--    收纳按钮        -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--    导航图标        -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" class="logo-img">
+            </a>
+        </div>
+
+        <!--    不同的导航链接        -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="schedule.html">Schedule</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="winner-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Challenge Winners
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="winner-dropdown-menu">
+                            <li><a href="evaluation_protocol.html">Evaluation Protocol</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="panoramic_winners.html">2D Panoramic Track Winners</a></li>
+                            <li><a href="cbct_winners.html">3D Dental CBCT Track Winners</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="call_for_papers.html">Call for Papers</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="paper-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Accepted Papers
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="paper-dropdown-menu">
+                            <li><a href="accepted_papers.html">Workshop Accepted Papers</a></li>
+                            <li><a href="challenge_publications.html">Challenge-Related Publications</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="organizers.html">Organizers</a></li>
+                <!--      以往挑战赛      -->
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="sts-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Previous STS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="sts-dropdown-menu">
+                            <li><a href="https://tianchi.aliyun.com/competition/entrance/532086">STS 2023
+                                (Vancouver)</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="miccai2024-content"  id="miccai2024">
+    <div class="slogan-content">
+        <div style="text-align: center;">
+            <h1 id="slogan-header">
+                STS 2024 <span class="slogan-detail">: 2nd Semi-supervised Teeth Segmentation</span> MICCAI Challenge
+            </h1>
+            <h2 class="slogan-location">
+                MICCAI 2024, MARRAKESH, MOROCCO
+            </h2>
+            <h3 class="slogan-time">October 6-10, 2024</h3>
+        </div>
+    </div>
+
+    <!--    <div class="alert-content main-content">-->
+    <!--        <button class="btn btn-default alert-btn" type="button" data-toggle="collapse" data-target="#alertCollapseContent" aria-expanded="false" aria-controls="alertCollapseContent">-->
+    <!--            <strong>Challenge On</strong>! You can click to Join. 🥳-->
+    <!--        </button>-->
+    <!--        <div class="collapse" id="alertCollapseContent">-->
+    <!--            <p class="well" style="text-align: justify">-->
+    <!--                You should ⬇️<a href="files/STS2024-REGISTRATION-FORM.pdf" class="alert-link">download</a> the form, sign it,-->
+    <!--                and then, send it to our contact email.-->
+    <!--                Once submitted, you'll get our challenge dataset download link.-->
+    <!--                For more details, please check below.-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="alert-content main-content">
+        <div class="btn btn-default alert-btn">
+            <p style="text-align: center; margin-bottom: 0;">
+                🎉<strong>Result Release</strong>!🎉
+                <a href="panoramic_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 Panoramic</span>
+                </a>
+                <a href="cbct_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 CBCT</span>
+                </a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="introduction-content main-content">
+        <h2 class="content-subtitle"></h2>
+        <p>
+            Hello!
+            We are pleased to announce that the schedule for our DentalCluster Workshop has been finalized.
+            The event will take place in the <span class="link-btn">⛳Arganier</span> room on <span class="link-btn">🕒October 6th</span>,
+            and we look forward to meeting you there face to face!
+            Thank you for your patience, and we also will share more information soon!
+        </p>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tb-head-time"></th>
+                    <th class="tb-head-session" colspan="2">Session</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tb-head-time">Time</td>
+                    <td class="tb-head-talk">Talk</td>
+                    <td class="tb-head-speaker">Speaker(s)</td>
+                </tr>
+                <tr>
+                    <td>08:00 - 08:15</td>
+                    <td>Opening - Presentation of the three Challenges</td>
+                    <td>Federico Bolelli, Yaqi Wang, Achraf Ben-Hamadou</td>
+                </tr>
+                <tr>
+                    <td class="tb-challenge-name" colspan="3">ToothFairy2 Challenge</td>
+                </tr>
+                <tr>
+                    <td>08:15 - 08:30</td>
+                    <td>ToothFairy2 Challenge Introduction</td>
+                    <td class="last-column">Federico Bolelli</td>
+                </tr>
+                <tr>
+                    <td>08:30 - 08:45</td>
+                    <td>Scaling nnU-Net for CBCT Segmentation</td>
+                    <td class="last-column">Fabian Isensee</td>
+                </tr>
+                <tr>
+                    <td>08:45 - 09:00</td>
+                    <td>Enhanced Multi-Structure Segmentation in CBCT Images with Adaptive Structure Optimization</td>
+                    <td class="last-column">Chuanyi Huang</td>
+                </tr>
+                <tr>
+                    <td>09:00 - 09:15</td>
+                    <td>Video Foundation Model for Medical 3D Segmentation</td>
+                    <td class="last-column">Qi Ma</td>
+                </tr>
+                <tr>
+                    <td>09:15 - 09:30</td>
+                    <td>Prize/Award Delivering and Discussion</td>
+                    <td class="last-column">Federico Bolelli, Luca Lumetti, Costantino Gran</td>
+                </tr>
+                <tr>
+                    <td class="tb-challenge-name" colspan="3">STS 2024 Challenge</td>
+                </tr>
+                <tr>
+                    <td>09:30 - 09:40</td>
+                    <td>STS 2024 Challenge Introduction</td>
+                    <td class="last-column">Yaqi Wang</td>
+                </tr>
+                <tr>
+                    <td>09:40 - 09:50</td>
+                    <td>A Two-Stage Semi-Supervised nnU-Net Model for Automated Tooth Segmentation in Panoramic Xray Images</td>
+                    <td class="last-column">Chuanyi Huang</td>
+                </tr>
+                <tr>
+                    <td>09:50 - 10:00</td>
+                    <td>Two-Stage Semi-Supervised nnU-Net Framework for Tooth Segmentation in CBCT Images</td>
+                    <td class="last-column">Chuanyi Huang</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 10:30</td>
+                    <td>Coffee Break</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10:30 - 10:40</td>
+                    <td>A Self-Training Pipeline for Semi-Supervised 2D Teeth Instance Segmentation</td>
+                    <td>Hongyuan Zhang</td>
+                </tr>
+                <tr>
+                    <td>10:40 - 10:50</td>
+                    <td>T3Net: Three-stage Framework for Tooth Instance Segmentation from CBCT Scans</td>
+                    <td>Chu Zhang</td>
+                </tr>
+                <tr>
+                    <td>10:50 - 11:00</td>
+                    <td>Coarse-to-Fine Pseudo Annotations for Semisupervised Teeth Segmentation</td>
+                    <td>Hong Liu</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 11:15</td>
+                    <td>Prize/Award Delivering and Discussion</td>
+                    <td class="last-column">Yaqi Wang</td>
+                </tr>
+                <tr>
+                    <td class="tb-challenge-name" colspan="3">3DTeethLand Challenge</td>
+                </tr>
+                <tr>
+                    <td>11:15 - 11:45</td>
+                    <td>3DTeethLand Challenge Introduction & Discussion</td>
+                    <td>Sergi Pujades Rocamora, Achraf Ben-Hamadou</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="images/memory.png" style="width: 100%; margin-top: 24px; border-radius: 3px;">
+    </div>
+
+</div>
+
+<div class="footer-content" id="footer">
+    <p style="text-align: center">
+        Copyright @
+        <a href="https://www.cuz.edu.cn/" target="_blank" style="color: inherit">
+            College of Media Engineering, Communication University of Zhejiang, Hangzhou, 310018, China.
+        </a>
+    </p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semi-supervised Teeth Segmentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    <meta name="author" content="STS Challenge">
+    <meta name="description" content="Website for STS Challenge at MICCAI Conferences.">
+    <meta name="keywords" content="MICCAI, MICCAI 2023, MICCAI 2024, STS, Semi-supervised Learning, Segmentation, Teeth Segmentation, Panoramic X-ray, Dental CBCT, Challenge">
+    <!--  公开对基本依赖    -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="../jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <!--  默认的相关依赖  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../bootstrap/font/bootstrap-icons.css">
+    <!--  导入自定义依赖  -->
+    <link rel="stylesheet" href="../css/miccai2024.css">
+    <script type="text/javascript" src="../js/miccai2024.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" id="container-fluid-id">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--    收纳按钮        -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--    导航图标        -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" class="logo-img">
+            </a>
+        </div>
+
+        <!--    不同的导航链接        -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="schedule.html">Schedule</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="winner-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Challenge Winners
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="winner-dropdown-menu">
+                            <li><a href="evaluation_protocol.html">Evaluation Protocol</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="panoramic_winners.html">2D Panoramic Track Winners</a></li>
+                            <li><a href="cbct_winners.html">3D Dental CBCT Track Winners</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="call_for_papers.html">Call for Papers</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="paper-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Accepted Papers
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="paper-dropdown-menu">
+                            <li><a href="accepted_papers.html">Workshop Accepted Papers</a></li>
+                            <li><a href="challenge_publications.html">Challenge-Related Publications</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="organizers.html">Organizers</a></li>
+                <!--      以往挑战赛      -->
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="sts-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Previous STS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="sts-dropdown-menu">
+                            <li><a href="https://tianchi.aliyun.com/competition/entrance/532086">STS 2023
+                                (Vancouver)</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="miccai2024-content" id="miccai2024">
+    <div class="slogan-content">
+        <div style="text-align: center;">
+            <h1 id="slogan-header">
+                STS 2024 <span class="slogan-detail">: 2nd Semi-supervised Teeth Segmentation</span> MICCAI Challenge
+            </h1>
+            <h2 class="slogan-location">
+                MICCAI 2024, MARRAKESH, MOROCCO
+            </h2>
+            <h3 class="slogan-time">October 6-10, 2024</h3>
+        </div>
+    </div>
+
+<!--    <div class="alert-content main-content">-->
+<!--        <button class="btn btn-default alert-btn" type="button" data-toggle="collapse" data-target="#alertCollapseContent" aria-expanded="false" aria-controls="alertCollapseContent">-->
+<!--            <strong>Challenge On</strong>! You can click to Join. 🥳-->
+<!--        </button>-->
+<!--        <div class="collapse" id="alertCollapseContent">-->
+<!--            <p class="well" style="text-align: justify">-->
+<!--                You should ⬇️<a href="files/STS2024-REGISTRATION-FORM.pdf" class="alert-link">download</a> the form, sign it,-->
+<!--                and then, send it to our contact email.-->
+<!--                Once submitted, you'll get our challenge dataset download link.-->
+<!--                For more details, please check below.-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="alert-content main-content">
+        <div class="btn btn-default alert-btn">
+            <p style="text-align: center; margin-bottom: 0;">
+                🎉<strong>Result Release</strong>!🎉
+                <a href="panoramic_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 Panoramic</span>
+                </a>
+                <a href="cbct_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 CBCT</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="introduction-content main-content">
+        <h2 class="content-title">🤗 Introduction</h2>
+        <p>
+            The 2D panoramic X-ray image and 3D
+            dental cone-beam computed tomography (CBCT) examination are the efficient ways for dentists to determine
+            invisible caries, impacted teeth and supernumerary teeth among children. Yet, identifying teeth from
+            panoramic X-ray images or CBCT scans and further manually annotating the teeth is time-consuming and
+            labor-intensive. Thus, we usually cannot obtain a huge number of labeled cases, which limits the development
+            of deep learning algorithms for segmenting teeth and automatically analyzing diseases.
+            As a potential alternative, semi-supervised learning can explore useful information from unlabeled cases.
+        </p>
+        <p>
+            In this year, we aim to promote the development of the tooth segmentation. We
+            extend previous <a href="https://tianchi.aliyun.com/competition/entrance/532086" class="link-btn">🤓STS 2023 Challenge</a>
+            from binary semantic settings to multi-instance and multi-class
+            segmentation settings, with an emphasis on instance-level segmentation. Specifically,
+            we host two challenge tracks, and are proud to announce the launch of the challenge workshop.
+            If you are interested in publishing a workshop paper,
+            please <a href="call_for_papers.html" class="link-btn">👉read the CfP and submit your paper </a>:
+        </p>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default p-panel">
+                    <div class="panel-heading p-panel-heading">
+                        <h3 class="panel-title">Track 1: 2D Panoramic X-ray Segmentation</h3>
+                    </div>
+                    <div class="panel-body p-panel-body">
+                        <img src="images/panoramic-1.png" alt="panoramic-image" style="width: 100%; height: auto">
+                        <p class="small-text">
+                            The segmentation algorithm is expected to accurately segment 32 permanent teeth (including
+                            wisdom teeth) and 20 possible deciduous teeth in panoramic X-ray images.
+                        </p>
+                        <p style="text-align: center; display: flex">
+                            <a href="https://www.codabench.org/competitions/3024/" class="p-join-btn  breathing-btn" target="_blank">CLICK ME TO JOIN🔥</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default c-panel">
+                    <div class="panel-heading c-panel-heading">
+                        <h3 class="panel-title">Track 2: 3D Dental CBCT Segmentation</h3>
+                    </div>
+                    <div class="panel-body c-panel-body">
+                        <img src="images/cbct-1.png" alt="cbct-image" style="width: 100%; height: auto">
+                        <p class="small-text">
+                            The segmentation algorithm needs to accurately segment 32 permanent teeth (including wisdom
+                            teeth) in 3D dental CBCT volume scans of different imaging fields.
+                        </p>
+                        <p style="text-align: center; display: flex">
+                            <a href="https://www.codabench.org/competitions/3025/" class="c-join-btn breathing-btn" target="_blank">CLICK ME TO JOIN🔥</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="track-content main-content">
+        <h2 class="content-title">📬 News</h2>
+        <p>
+            We are excited to share some recent news and updates with you, highlighting significant milestones and
+            upcoming events that reflect our ongoing efforts and achievements in the STS 2024 Challenge:
+        </p>
+
+        <ul>
+            <li>
+                [2024.07.10] STS 2024 MICCAI Challenge has been configured on the CodaBench platform and the challenge
+                has officially started.
+                We look forward to seeing participants from around the world showcase their talent and innovation.
+            </li>
+            <li>
+                [2024.07.01] Our workshop paper submission application has been approved on the OpenReview platform.
+            </li>
+            <li>
+                [2024.04.01] Challenge workshop: Supervised and Semi-supervised Multi-Structure Segmentation and
+                Landmark Detection in Dental Data joint-event website launched.
+            </li>
+            <li>
+                [2024.03.12] The STS 2024 challenge has been accepted to MICCAI 2024 challenge.
+                We look forward to meeting each one of you face to face. See you all in Marrakesh, Morocco!
+            </li>
+        </ul>
+    </div>
+
+    <div class="date-content main-content">
+        <h2 class="content-title">🗓️ Important Dates (PST)</h2>
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <td>Registration Open</td>
+                        <td class="td-padding">July 15</td>
+                    </tr>
+                    <tr>
+                        <td>Challenge Validation Deadline</td>
+                        <td class="td-padding">September 15</td>
+                    </tr>
+                    <tr>
+                        <td>Challenge Final Deadline</td>
+                        <td class="td-padding">September 20</td>
+                    </tr>
+                    <tr>
+                        <td>Announcement of Challenge Winners</td>
+                        <td class="td-padding">October 6-10</td>
+                    </tr>
+                    <tr>
+                        <td>Workshop Date</td>
+                        <td class="td-padding">October 6-10</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-content main-content">
+        <h2 class="content-title">📧 Contact</h2>
+        <p>
+            For any inquiries, please feel free to reach out via email at
+            <a href="mailto:SemiTeethSegChallenge@aliyun.com" class="red-link">SemiTeethSegChallenge@aliyun.com</a>.
+            We welcome any questions, feedback, or requests for further information
+            regarding the STS 2024 Challenge.
+            We look forward to meeting each one of you this year, face to face if possible.
+            See you all in Marrakesh, Morocco!
+        </p>
+    </div>
+</div>
+
+<div class="footer-content" id="footer">
+    <p style="text-align: center">
+        Copyright @
+        <a href="https://www.cuz.edu.cn/" target="_blank" style="color: inherit">
+            College of Media Engineering, Communication University of Zhejiang, Hangzhou, 310018, China.
+        </a>
+    </p>
+</div>
+
+</body>
+</html>

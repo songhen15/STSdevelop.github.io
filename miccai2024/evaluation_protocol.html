@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semi-supervised Teeth Segmentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    <meta name="author" content="STS Challenge">
+    <meta name="description" content="Website for STS Challenge at MICCAI Conferences.">
+    <meta name="keywords" content="MICCAI, MICCAI 2023, MICCAI 2024, STS, Semi-supervised Learning, Segmentation, Teeth Segmentation, Panoramic X-ray, Dental CBCT, Challenge">
+    <!--  公开对基本依赖    -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="../jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <!--  默认的相关依赖  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../bootstrap/font/bootstrap-icons.css">
+    <!--  导入自定义依赖  -->
+    <link rel="stylesheet" href="../css/miccai2024.css">
+    <script type="text/javascript" src="../js/miccai2024.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" id="container-fluid-id">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--    收纳按钮        -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--    导航图标        -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" class="logo-img">
+            </a>
+        </div>
+
+        <!--    不同的导航链接        -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="schedule.html">Schedule</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="winner-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Challenge Winners
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="winner-dropdown-menu">
+                            <li><a href="evaluation_protocol.html">Evaluation Protocol</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="panoramic_winners.html">2D Panoramic Track Winners</a></li>
+                            <li><a href="cbct_winners.html">3D Dental CBCT Track Winners</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="call_for_papers.html">Call for Papers</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="paper-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Accepted Papers
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="paper-dropdown-menu">
+                            <li><a href="accepted_papers.html">Workshop Accepted Papers</a></li>
+                            <li><a href="challenge_publications.html">Challenge-Related Publications</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="organizers.html">Organizers</a></li>
+                <!--      以往挑战赛      -->
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle btn-flatten" type="button" id="sts-dropdown-menu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Previous STS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown" aria-labelledby="sts-dropdown-menu">
+                            <li><a href="https://tianchi.aliyun.com/competition/entrance/532086">STS 2023
+                                (Vancouver)</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="miccai2024-content" id="miccai2024">
+    <div class="slogan-content">
+        <div style="text-align: center;">
+            <h1 id="slogan-header">
+                STS 2024 <span class="slogan-detail">: 2nd Semi-supervised Teeth Segmentation</span> MICCAI Challenge
+            </h1>
+            <h2 class="slogan-location">
+                MICCAI 2024, MARRAKESH, MOROCCO
+            </h2>
+            <h3 class="slogan-time">October 6-10, 2024</h3>
+        </div>
+    </div>
+
+    <!--    <div class="alert-content main-content">-->
+    <!--        <button class="btn btn-default alert-btn" type="button" data-toggle="collapse" data-target="#alertCollapseContent" aria-expanded="false" aria-controls="alertCollapseContent">-->
+    <!--            <strong>Challenge On</strong>! You can click to Join. 🥳-->
+    <!--        </button>-->
+    <!--        <div class="collapse" id="alertCollapseContent">-->
+    <!--            <p class="well" style="text-align: justify">-->
+    <!--                You should ⬇️<a href="files/STS2024-REGISTRATION-FORM.pdf" class="alert-link">download</a> the form, sign it,-->
+    <!--                and then, send it to our contact email.-->
+    <!--                Once submitted, you'll get our challenge dataset download link.-->
+    <!--                For more details, please check below.-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="alert-content main-content">
+        <div class="btn btn-default alert-btn">
+            <p style="text-align: center; margin-bottom: 0;">
+                🎉<strong>Result Release</strong>!🎉
+                <a href="panoramic_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 Panoramic</span>
+                </a>
+                <a href="cbct_winners.html" class="breathing-btn">
+                    <span class="badge" style="font-size: 11pt">👉 CBCT</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="introduction-content main-content">
+        <h2 class="content-title">
+            🔢 Evaluation Metrics
+        </h2>
+        <p>
+            Based on the results in <a href="#" class="link-btn">🤓STS 2023 Challenge</a>,
+            we found that segmentation models can not achieve a good tradeoff
+            between segmentation accuracy and efficiency.
+            Thus, in STS 2024, the challenge evaluation criteria
+            are not limited to segmentation accuracy, but also include runtime and GPU memory consumption, providing a
+            comprehensive assessment of segmentation efficiency.
+        </p>
+        <p>
+            In specific,
+            the segmentation inference results are evaluated using
+            <a href="https://metrics-reloaded.dkfz.de/metric?id=dsc" class="red-link">Dice Similarity Coefficient (DSC)</a>,
+            <a href="https://metrics-reloaded.dkfz.de/metric?id=normalized_surface_distance" class="red-link">Normalized Surface Dice (NSD)</a>,
+            <a href="https://metrics-reloaded.dkfz.de/metric?id=intersection_over_union" class="red-link">Intersection over Union (IoU)</a>,
+            Identification Accuracy (IA), Running time (RT) and Area under GPU
+            memory-time curve (GPU-area).
+            DSC and IoU are used to measure the region error, while NSD assesses the boundary error. The IA metric
+            evaluates the object-level localization (detection) performance of teeth. RT measures the inference speed.
+            Moreover, we also include the area under the GPU utilization-time curve to measure the GPU consumption.
+            You can learn the details from the python3 version of the code for calculating
+            performance metrics that we released.
+        </p>
+        <p>
+            <strong>Special Explanation</strong>:
+            The calculation definition of IA is: #{ D ∩ G } / #{D ∪ G}.
+            where G is the set of all teeth in ground truth data, and D is the set of teeth prediction. #{ D ∩ G }
+            indicates the intersection between the D and the G, reflecting the number of correctly labeled tooth
+            instances detected by the algorithm, and #{D ∪ G} represents the union between the prediction result and the
+            ground truth.
+            In particular, the localization criterion is Mask IoU score localization criterion.
+            Besides, we have implemented a greedy strategy to match reference and predicted objects.
+            This means that only objects with consistent predicted categories and a Mask IoU greater than 0.5 will have
+            their #{ D ∩ G } counts + 1.
+        </p>
+        <p>
+            🔔Now, we have updated and released the evaluation code and submission instructions. If you encounter a bug or
+            have questions about the evaluation metrics, you can check out our Github:
+            <a href="https://github.com/STS-challenge/STS" class="red-link">https://github.com/STS-challenge/STS</a>.
+        </p>
+
+        <h3 class="content-subtitle">🏆 Ranking Scheme</h3>
+        <p>
+            All metrics will be used to compute the ranking.
+            However, considering the computing resource limitations of the CodeBench, RT and GPU_area will not be
+            calculated. We will include these two metrics in the ranking in the final testing phase.
+            The ranking scheme includes the following five steps:
+        </p>
+        <ul>
+            <li>
+                Step 1:
+                In order to maintain consistency with our previous challenge and assess the algorithm's performance at
+                the image level, our evaluation framework will first initially compute three metrics, DSC, IoU and NSD,
+                on a per-image basis to derive the algorithm's DSC (image_DSC), IoU (image_IoU) and NSD (image_NSD)
+                scores at image-level.
+            </li>
+            <li>
+                Step 2:
+                Next, given the challenge's focus on instance-level analysis, we also will employ a greedy algorithm to
+                match the corresponding prediction results with the ground truth, allowing for the calculation of DSC
+                (instance_DSC), IoU (instance_IoU), NSD (instance_NSD) and IA (instance_IA) scores at
+                the instance level.
+            </li>
+            <li>
+                Step 3:
+                Then, the evaluation will include measurements of running time (RT) and GPU consumption (GPU_area)
+                for each algorithm.
+            </li>
+            <li>
+                Step 4:
+                Take the mean of the nine metrics over the test cases, and rank separately among the teams.
+            </li>
+            <li>
+                Step 5:
+                A final overall rank is given by taking the average of the nine ranks.
+                In the case of equal average rankings for two teams, they are considered tied.
+            </li>
+        </ul>
+        <h3 class="content-subtitle">🎁 Challenge Awards</h3>
+        <p>
+            To determine the winners, we will rank the participants based on their final algorithm on the independent test
+            set.
+            We have planned a range of comprehensive awards for both tracks, which we hope will attract and motivate
+            you to participate.We look forward to your involvement and
+            to seeing the outstanding work that will emerge from this competition.
+        </p>
+        <ul>
+            <li>[Cash]: $500 for the 1st participant.</li>
+            <li>[Certificates]: The top 10 participants will receive a certificate.</li>
+            <li>[Oral Presentation]: Top-performing participants will be invited to participate in the presentation</li>
+            <li>[Paper Publication]: Teams with outstanding performance can submit papers to our workshops and participate in review papers.</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer-content" id="footer">
+    <p style="text-align: center">
+        Copyright @
+        <a href="https://www.cuz.edu.cn/" target="_blank" style="color: inherit">
+            College of Media Engineering, Communication University of Zhejiang, Hangzhou, 310018, China.
+        </a>
+    </p>
+</div>
+
+
+</body>
+</html>
