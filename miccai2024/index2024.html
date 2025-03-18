@@ -23,11 +23,8 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid" id="container-fluid-id">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <!--    收纳按钮        -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-                    data-target="#navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -101,32 +98,30 @@
     <div class="slogan-content">
         <div style="text-align: center;">
             <h1 id="slogan-header">
-                STSR 2025 <span class="slogan-detail">: 3rd Semi-supervised Teeth Segmentation and Registration MICCAI Challenge</span>
+                STS 2024 <span class="slogan-detail">: 2nd Semi-supervised Teeth Segmentation</span> MICCAI Challenge
             </h1>
             <h2 class="slogan-location">
-                MICCAI 2025, Daejeon, Republic of Korea
+                MICCAI 2024, MARRAKESH, MOROCCO
             </h2>
-            <h3 class="slogan-time">September 23-27, 2025</h3>
+            <h3 class="slogan-time">October 6-10, 2024</h3>
         </div>
     </div>
 
-    <!-- 报名栏目，包含下载表格 -->
-   <div class="alert-content main-content">
-        <button class="btn btn-default alert-btn" type="button" data-toggle="collapse" data-target="#alertCollapseContent" aria-expanded="false" aria-controls="alertCollapseContent">
-            <strong>Challenge On</strong>! You can click to Join. 🥳
-        </button>
-        <div class="collapse" id="alertCollapseContent">
-            <p class="well" style="text-align: justify">
-                You should ⬇️<a href="files/STS2024-REGISTRATION-FORM.pdf" class="alert-link">download</a> the form, sign it,
-                and then, send it to our contact email.
-                Once submitted, you'll get our challenge dataset download link.
-                For more details, please check below.
-            </p>
-        </div>
-    </div>
+<!--    <div class="alert-content main-content">-->
+<!--        <button class="btn btn-default alert-btn" type="button" data-toggle="collapse" data-target="#alertCollapseContent" aria-expanded="false" aria-controls="alertCollapseContent">-->
+<!--            <strong>Challenge On</strong>! You can click to Join. 🥳-->
+<!--        </button>-->
+<!--        <div class="collapse" id="alertCollapseContent">-->
+<!--            <p class="well" style="text-align: justify">-->
+<!--                You should ⬇️<a href="files/STS2024-REGISTRATION-FORM.pdf" class="alert-link">download</a> the form, sign it,-->
+<!--                and then, send it to our contact email.-->
+<!--                Once submitted, you'll get our challenge dataset download link.-->
+<!--                For more details, please check below.-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <!-- 获奖名单公布栏目 -->
-    <!-- <div class="alert-content main-content">
+    <div class="alert-content main-content">
         <div class="btn btn-default alert-btn">
             <p style="text-align: center; margin-bottom: 0;">
                 🎉<strong>Result Release</strong>!🎉
@@ -138,29 +133,26 @@
                 </a>
             </p>
         </div>
-    </div> -->
+    </div>
 
     <div class="introduction-content main-content">
         <h2 class="content-title">📌 Introduction</h2>
         <p>
-            Computer-aided diagnosis tools are increasingly popular in modern dental practice,
-            particularly for treatment planning or comprehensive prognosis evaluation. 
-            With the advancement of oral digitalization and three-dimensional scanning technology, 
-            cone-beam computed tomography (CBCT) and intraoral scanning (IOS) have been widely applied in clinical dental treatment.
-            Intraoral scanning (IOS) models offer high resolution, relying solely on IOS data for treatment carries the risk of insufficient root information. 
-            Conversely, CBCT provides comprehensive information on both crowns and roots, but its scanning resolution is lower, and it contains more redundant information. 
-            Therefore, combining the two can better utilize their complementary strengths, enhancing the precision and efficiency of dental treatment. 
-            Furthermore, automated and precise evaluation of root pulp canals in CBCT images holds significant importance, 
-            as it can substantially enhance the precision and efficiency of root pulp canals treatment. 
-            Precise segmentation of the root pulp canal allows for a clearer visualization of its morphology, 
-            branches, and curvatures, facilitating the development of more refined filling strategies. However, 
-            the annotation of tooth root pulp canal regions in CBCT images is inherently labor-intensive, 
-            requiring a substantial investment of time and human resources.
+            The 2D panoramic X-ray image and 3D
+            dental cone-beam computed tomography (CBCT) examination are the efficient ways for dentists to determine
+            invisible caries, impacted teeth and supernumerary teeth among children. Yet, identifying teeth from
+            panoramic X-ray images or CBCT scans and further manually annotating the teeth is time-consuming and
+            labor-intensive. Thus, we usually cannot obtain a huge number of labeled cases, which limits the development
+            of deep learning algorithms for segmenting teeth and automatically analyzing diseases.
+            As a potential alternative, semi-supervised learning can explore useful information from unlabeled cases.
         </p>
         <p>
-            In this year, building upon the previous semi-supervised challenge theme, we hosttwo novel subtrasks, 
-            which are semi-supervised CBCT-IOS registration and CBCT teeth and root plup segmentation. 
-            We are proud to announce the launch of the challenge workshop. If you are interested in publishing a workshop paper, 
+            In this year, we aim to promote the development of the tooth segmentation. We
+            extend previous <a href="https://tianchi.aliyun.com/competition/entrance/532086" class="link-btn">🤓STS 2023 Challenge</a>
+            from binary semantic settings to multi-instance and multi-class
+            segmentation settings, with an emphasis on instance-level segmentation. Specifically,
+            we host two challenge tracks, and are proud to announce the launch of the challenge workshop.
+            If you are interested in publishing a workshop paper,
             please <a href="call_for_papers.html" class="link-btn">👉read the CfP and submit your paper </a>:
         </p>
 
@@ -168,12 +160,13 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default p-panel">
                     <div class="panel-heading p-panel-heading">
-                        <h3 class="panel-title">Track 1: CBCT-IOS registration</h3>
+                        <h3 class="panel-title">Track 1: 2D Panoramic X-ray Segmentation</h3>
                     </div>
                     <div class="panel-body p-panel-body">
-                        <img src="images/registration-1.png" alt="panoramic-image" style="width: 100%; height: auto">
+                        <img src="images/panoramic-1.png" alt="panoramic-image" style="width: 100%; height: auto">
                         <p class="small-text">
-                            The registration algorithm is expected to register the teeth crown and the corresponding root.
+                            The segmentation algorithm is expected to accurately segment 32 permanent teeth (including
+                            wisdom teeth) and 20 possible deciduous teeth in panoramic X-ray images.
                         </p>
                         <p style="text-align: center; display: flex">
                             <a href="https://www.codabench.org/competitions/3024/" class="p-join-btn  breathing-btn" target="_blank">CLICK ME TO JOIN🔥</a>
@@ -184,12 +177,13 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default c-panel">
                     <div class="panel-heading c-panel-heading">
-                        <h3 class="panel-title">Track 2: CBCT teeth and root plup canal segmentation</h3>
+                        <h3 class="panel-title">Track 2: 3D Dental CBCT Segmentation</h3>
                     </div>
                     <div class="panel-body c-panel-body">
-                        <img src="images/segmentation-1.png" alt="cbct-image" style="width: 100%; height: auto">
+                        <img src="images/cbct-1.png" alt="cbct-image" style="width: 100%; height: auto">
                         <p class="small-text">
-                            The segmentation algorithm is expected to segment all the teeth and root plup canal accurately.
+                            The segmentation algorithm needs to accurately segment 32 permanent teeth (including wisdom
+                            teeth) in 3D dental CBCT volume scans of different imaging fields.
                         </p>
                         <p style="text-align: center; display: flex">
                             <a href="https://www.codabench.org/competitions/3025/" class="c-join-btn breathing-btn" target="_blank">CLICK ME TO JOIN🔥</a>
@@ -203,13 +197,26 @@
     <div class="track-content main-content">
         <h2 class="content-title">📬 News</h2>
         <p>
-            We are excited to share some recent news and updates with you, highlighting significant milestones and 
-            upcoming events that reflect our ongoing efforts and achievements in the STSR 2025 Challenge:
+            We are excited to share some recent news and updates with you, highlighting significant milestones and
+            upcoming events that reflect our ongoing efforts and achievements in the STS 2024 Challenge:
         </p>
 
         <ul>
             <li>
-                [2025.03] Our challenge has been accepted by the MICCAI 2025, as a part of ONDI Workshop!!!
+                [2024.07.10] STS 2024 MICCAI Challenge has been configured on the CodaBench platform and the challenge
+                has officially started.
+                We look forward to seeing participants from around the world showcase their talent and innovation.
+            </li>
+            <li>
+                [2024.07.01] Our workshop paper submission application has been approved on the OpenReview platform.
+            </li>
+            <li>
+                [2024.04.01] Challenge workshop: Supervised and Semi-supervised Multi-Structure Segmentation and
+                Landmark Detection in Dental Data joint-event website launched.
+            </li>
+            <li>
+                [2024.03.12] The STS 2024 challenge has been accepted to MICCAI 2024 challenge.
+                We look forward to meeting each one of you face to face. See you all in Marrakesh, Morocco!
             </li>
         </ul>
     </div>
@@ -222,23 +229,23 @@
                     <tbody>
                     <tr>
                         <td>Registration Open</td>
-                        <td class="td-padding">May 15</td>
+                        <td class="td-padding">July 15</td>
                     </tr>
                     <tr>
                         <td>Challenge Validation Deadline</td>
-                        <td class="td-padding">August 25</td>
-                    </tr>
-                    <tr>
-                        <td>Challenge Final Deadline</td>
                         <td class="td-padding">September 15</td>
                     </tr>
                     <tr>
+                        <td>Challenge Final Deadline</td>
+                        <td class="td-padding">September 20</td>
+                    </tr>
+                    <tr>
                         <td>Announcement of Challenge Winners</td>
-                        <td class="td-padding">September 23-27</td>
+                        <td class="td-padding">October 6-10</td>
                     </tr>
                     <tr>
                         <td>Workshop Date</td>
-                        <td class="td-padding">September 23-27</td>
+                        <td class="td-padding">October 6-10</td>
                     </tr>
                     </tbody>
                 </table>
@@ -253,9 +260,9 @@
             For any inquiries, please feel free to reach out via email at
             <a href="mailto:SemiTeethSegChallenge@aliyun.com" class="red-link">SemiTeethSegChallenge@aliyun.com</a>.
             We welcome any questions, feedback, or requests for further information
-            regarding the STSR 2025 Challenge.
+            regarding the STS 2024 Challenge.
             We look forward to meeting each one of you this year, face to face if possible.
-            See you at Daejeon, Republic of Korea!
+            See you all in Marrakesh, Morocco!
         </p>
     </div>
 </div>
