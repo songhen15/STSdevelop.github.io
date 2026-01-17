@@ -58,8 +58,8 @@
                         <ul class="dropdown-menu nav-dropdown" aria-labelledby="winner-dropdown-menu">
                             <li><a href="evaluation_protocol.html">Evaluation Protocol</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="panoramic_winners.html">2D Panoramic Track Winners</a></li>
-                            <li><a href="cbct_winners.html">3D Dental CBCT Track Winners</a></li>
+                            <li><a href="panoramic_winners.html">CBCT Teeth &amp; Pulp Segmentation Winners</a></li>
+                            <li><a href="cbct_winners.html">CBCT-IOS Registration Track Winners</a></li>
                         </ul>
                     </div>
                 </li>
@@ -131,20 +131,23 @@
             <p style="text-align: center; margin-bottom: 0;">
                 🎉<strong>Result Release</strong>!🎉
                 <a href="panoramic_winners.html" class="breathing-btn">
-                    <span class="badge" style="font-size: 11pt">👉 Panoramic</span>
+                    <span class="badge" style="font-size: 11pt">Segmentation</span>
                 </a>
                 <a href="cbct_winners.html" class="breathing-btn">
-                    <span class="badge" style="font-size: 11pt">👉 CBCT</span>
+                    <span class="badge" style="font-size: 11pt">Registration</span>
                 </a>
             </p>
         </div>
     </div>
-
+    <!-- 主要内容区域，包含获奖者表格 -->
     <div class="introduction-content main-content">
         <h2 class="content-subtitle"></h2>
+        <!-- 获奖者表格容器 -->
         <div class="winner-table-container">
+            <!-- 获奖者成绩表格 -->
             <table class="winner-table">
                 <tbody id="winner-table-body">
+                <!-- 表格头部第一行，定义不同评估级别 -->
                 <tr style="border-top: 2px solid black">
                     <td class="winner-head winner-right-border" rowspan="2" style="text-align: center;">Team</td>
                     <td class="winner-head winner-bottom-border winner-right-border" colspan="3" style="text-align: center;">Image-level</td>
@@ -152,6 +155,7 @@
                     <td class="winner-head winner-right-border" rowspan="2" style="text-align: center;">Final Rank</td>
                     <td class="winner-head" rowspan="2" style="text-align: center;">Links</td>
                 </tr>
+                <!-- 表格头部第二行，定义具体评估指标 -->
                 <tr style="border-bottom: 2px solid black">
                     <td class="winner-metric">DSC (↑)</td>
                     <td class="winner-metric">IoU (↑)</td>
