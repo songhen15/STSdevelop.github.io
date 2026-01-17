@@ -144,83 +144,66 @@
             🔢 Evaluation Metrics
         </h2>
         <p>
-            Based on the results in <a href="#" class="link-btn">🤓STS 2023 Challenge</a>,
-            we found that segmentation models can not achieve a good tradeoff
-            between segmentation accuracy and efficiency.
-            Thus, in STS 2024, the challenge evaluation criteria
-            are not limited to segmentation accuracy, but also include runtime and GPU memory consumption, providing a
-            comprehensive assessment of segmentation efficiency.
-        </p>
-        <p>
-            In specific,
-            the segmentation inference results are evaluated using
+            In <a href="#" class="link-btn">🤓STS 2025 Challenge</a>, the challenge evaluation criteria focus strictly on
+            segmentation and registration accuracy. In specific, the
+            <a href="https://github.com/ricoleehduu/STSR-Challenge/tree/main/STSR-2025/evaluation/Task1" class="red-link" target="_blank">
+                Task 1 (Teeth and Pulp Root Canal Segmentation)
+            </a>
+            inference results are evaluated using
             <a href="https://metrics-reloaded.dkfz.de/metric?id=dsc" class="red-link">Dice Similarity Coefficient (DSC)</a>,
             <a href="https://metrics-reloaded.dkfz.de/metric?id=normalized_surface_distance" class="red-link">Normalized Surface Dice (NSD)</a>,
             <a href="https://metrics-reloaded.dkfz.de/metric?id=intersection_over_union" class="red-link">Intersection over Union (IoU)</a>,
-            Identification Accuracy (IA), Running time (RT) and Area under GPU
-            memory-time curve (GPU-area).
-            DSC and IoU are used to measure the region error, while NSD assesses the boundary error. The IA metric
-            evaluates the object-level localization (detection) performance of teeth. RT measures the inference speed.
-            Moreover, we also include the area under the GPU utilization-time curve to measure the GPU consumption.
-            You can learn the details from the python3 version of the code for calculating
-            performance metrics that we released.
+            and Identification Accuracy (IA). DSC and IoU are used to measure the region error, while NSD assesses the
+            boundary error. The IA metric evaluates the object-level localization (detection) performance of teeth. For
+            <a href="https://github.com/ricoleehduu/STSR-Challenge/tree/main/STSR-2025/evaluation/Task2" class="red-link" target="_blank">
+                Task 2 (Crown and Root Registration)
+            </a>,
+            the performance is evaluated using Mean Translation Error (MTE) and Mean Rotation Error (MRE) to assess the
+            alignment accuracy between the IOS and CBCT scans in terms of millimeters and degrees, respectively. You can
+            learn the details from the python version of the code for calculating performance metrics that we released.
         </p>
         <p>
             <strong>Special Explanation</strong>:
-            The calculation definition of IA is: #{ D ∩ G } / #{D ∪ G}.
-            where G is the set of all teeth in ground truth data, and D is the set of teeth prediction. #{ D ∩ G }
-            indicates the intersection between the D and the G, reflecting the number of correctly labeled tooth
-            instances detected by the algorithm, and #{D ∪ G} represents the union between the prediction result and the
-            ground truth.
-            In particular, the localization criterion is Mask IoU score localization criterion.
-            Besides, we have implemented a greedy strategy to match reference and predicted objects.
+            The calculation definition of IA is: #{ D ∩ G } / #{D ∪ G}, where G is the set of all teeth in ground truth
+            data, and D is the set of teeth prediction. #{ D ∩ G } indicates the intersection between D and G, reflecting
+            the number of correctly labeled tooth instances detected by the algorithm, and #{D ∪ G} represents the union
+            between the prediction result and the ground truth. In particular, the localization criterion is Mask IoU score
+            localization criterion. Besides, we have implemented a greedy strategy to match reference and predicted objects.
             This means that only objects with consistent predicted categories and a Mask IoU greater than 0.5 will have
             their #{ D ∩ G } counts + 1.
         </p>
         <p>
-            🔔Now, we have updated and released the evaluation code and submission instructions. If you encounter a bug or
-            have questions about the evaluation metrics, you can check out our Github:
-            <a href="https://github.com/STS-challenge/STS" class="red-link">https://github.com/STS-challenge/STS</a>.
+            🔔 Now, we have updated and released the evaluation code. If you encounter a bug or have questions about the
+            evaluation metrics, you can check out our Github:
+            <a href="https://github.com/ricoleehduu/STSR-Challenge/tree/main/STSR-2025/evaluation" class="red-link" target="_blank">
+                https://github.com/ricoleehduu/STSR-Challenge/tree/main/STSR-2025/evaluation
+            </a>.
         </p>
 
         <h3 class="content-subtitle">🏆 Ranking Scheme</h3>
         <p>
-            All metrics will be used to compute the ranking.
-            However, considering the computing resource limitations of the CodeBench, RT and GPU_area will not be
-            calculated. We will include these two metrics in the ranking in the final testing phase.
-            The ranking scheme includes the following five steps:
+            All metrics will be used to compute the ranking. The ranking scheme includes the following steps:
         </p>
         <ul>
             <li>
                 Step 1:
-                In order to maintain consistency with our previous challenge and assess the algorithm's performance at
-                the image level, our evaluation framework will first initially compute three metrics, DSC, IoU and NSD,
-                on a per-image basis to derive the algorithm's DSC (image_DSC), IoU (image_IoU) and NSD (image_NSD)
-                scores at image-level.
+                In order to assess the algorithm's performance at the image level, our evaluation framework will first
+                compute three metrics, DSC, IoU and NSD, on a per-image basis to derive the algorithm's scores at the
+                image-level.
             </li>
             <li>
                 Step 2:
-                Next, given the challenge's focus on instance-level analysis, we also will employ a greedy algorithm to
-                match the corresponding prediction results with the ground truth, allowing for the calculation of DSC
-                (instance_DSC), IoU (instance_IoU), NSD (instance_NSD) and IA (instance_IA) scores at
-                the instance level.
+                Next, given the challenge's focus on instance-level analysis, we will employ a greedy algorithm to match
+                the corresponding prediction results with the ground truth, allowing for the calculation of DSC, IoU, NSD
+                and IA scores at the instance-level.
             </li>
             <li>
                 Step 3:
-                Then, the evaluation will include measurements of running time (RT) and GPU consumption (GPU_area)
-                for each algorithm.
-            </li>
-            <li>
-                Step 4:
-                Take the mean of the nine metrics over the test cases, and rank separately among the teams.
-            </li>
-            <li>
-                Step 5:
-                A final overall rank is given by taking the average of the nine ranks.
-                In the case of equal average rankings for two teams, they are considered tied.
+                A final overall rank is given by taking the average of the ranks across all metrics. In the case of equal
+                average rankings for two teams, they are considered tied.
             </li>
         </ul>
-        <h3 class="content-subtitle">🎁 Challenge Awards</h3>
+        <!--<h3 class="content-subtitle">🎁 Challenge Awards</h3>
         <p>
             To determine the winners, we will rank the participants based on their final algorithm on the independent test
             set.
@@ -233,7 +216,7 @@
             <li>[Certificates]: The top 10 participants will receive a certificate.</li>
             <li>[Oral Presentation]: Top-performing participants will be invited to participate in the presentation</li>
             <li>[Paper Publication]: Teams with outstanding performance can submit papers to our workshops and participate in review papers.</li>
-        </ul>
+        </ul>-->
     </div>
 
 </div>
